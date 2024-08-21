@@ -1,0 +1,60 @@
+### User Signup (with image file upload)
+POST http://localhost:5000/api/users/signup
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="name"
+
+John Doe
+--boundary
+Content-Disposition: form-data; name="email"
+
+john@example.com
+--boundary
+Content-Disposition: form-data; name="password"
+
+secret123
+--boundary
+Content-Disposition: form-data; name="imageUrl"
+
+https://example.com/image.jpg
+--boundary
+Content-Disposition: form-data; name="file"; filename="profile.jpg"
+Content-Type: image/jpeg
+
+< ./path/to/your/profile.jpg
+--boundary--
+
+### User Signup (without image file upload, using imageUrl)
+POST http://localhost:5000/api/users/signup
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "password": "secret123",
+    "imageUrl": "https://example.com/image.jpg"
+}
+
+### User Signup (without image)
+POST http://localhost:5000/api/users/signup
+Content-Type: application/json
+
+{
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "password": "secret123"
+}
+
+### User Login
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "john@example.com",
+    "password": "secret123"
+}
+
+# ### Get User Details (Requires JWT token)
+# GET http://localhost:5000/api/users/me
+# Authorization: Bearer {{token}}

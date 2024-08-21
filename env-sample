@@ -1,0 +1,14 @@
+
+# Port Configuration
+PORT=5000
+
+# MongoDB Connection String
+DB_URI=mongodb://localhost:27017/your-db-name
+
+# JWT Secret Key
+JWT_SECRET=your_jwt_secret_key
+
+# AWS S3 Configuration
+MY_AWS_ACCESS_KEY_ID=your_aws_access_key_id
+MY_AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
+S3_BUCKET_NAME=your_s3_bucket_name
