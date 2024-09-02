@@ -24,5 +24,6 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 app.use('/auth', Router.SigninRouter);
+app.use('/article', Router.articleRouter);
 
 export default app;
